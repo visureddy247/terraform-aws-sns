@@ -1,1 +1,1 @@
-# terrafrom-aws-sns
+# terraform-aws-sns
