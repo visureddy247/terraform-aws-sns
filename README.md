@@ -1,7 +1,7 @@
 # terraform-aws-sns
 **Author** : Rahul Gaikwad (gikwadr@amazon.com), Jomcy Pappachen(jomcy@amazon.com)
 
-This quick start module will create an Amazon Simple Notification Service(SNS) Topic with other resources 
+This Terraform module will create an Amazon Simple Notification Service(SNS) Topic with other resources 
 
 ## Folder structure : 
 * **deploy/** folder contains the sample  .tf files with `*.tfvars` to deploy Amazon SNS Topic
