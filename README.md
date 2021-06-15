@@ -13,7 +13,6 @@ This quick start module will create an Amazon Simple Notification Service(SNS) T
 3. Configure Terraform Cloud API access. Run the following to generate a Terraform Cloud token from the command line interface:
    ```
       terraform login
-      Export TERRAFORM_CONFIG
       export TERRAFORM_CONFIG="$HOME/.terraform.d/credentials.tfrc.json"
    ```
 4. If you don't have git installed, [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 
