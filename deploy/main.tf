@@ -2,6 +2,11 @@
 # Defaults
 ######################################
 
+terraform {
+  required_version = ">= 0.15.1"
+  backend "remote" {}
+}
+
 provider "aws" {
   region = var.region
 }
