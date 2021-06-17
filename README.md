@@ -18,7 +18,7 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
 
 ## Deploying the terraform-aws-module
    
-   1. Configure your .tfvars file. 
+   1. Configure your .tfvars file. In the following example, replace values for AWS_SECRET_ACCESS_KEY, AWS_ACCESS_KEY_ID, and AWS_SESSION_TOKEN with your information.
        ```  
       Example filepath = $HOME/.aws/terraform.tfvars
       Example tfvars file contents
@@ -29,9 +29,7 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
       workspace_dir = ../deploy
       region        = us-east-1 //AWS region
       ```    
-      Note : 
-       - (replace *** with AKEY and SKEY)
-       - STS-based credentials are optional but highly recommended.
+      Note: STS-based credentials are optional but highly recommended.
          ```
           !!!!CAUTION!!!!:Make sure your credential are secured outside version control (and follow secrets management bestpractices)
          ```
