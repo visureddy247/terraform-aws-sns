@@ -30,21 +30,18 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
       region        = us-east-1 //AWS region
       ```    
       Note: [AWS Security Token Service (AWS STS)](https://docs.aws.amazon.com/general/latest/gr/sts.html) credentials are optional but highly recommended. Ensure that your credential are secured outside version control and follow secrets management best practices. For more information, see [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html).
-         ```
-          !!!!CAUTION!!!!:
-         ```
-
-  2. Clone the **aws-quickstart/terraform-aws-sns** repository using the following command:
+         
+  2. Clone the **aws-quickstart/terraform-aws-sns** repository.
       ```
       git clone https://github.com/aws-quickstart/terraform-aws-sns
       ```
 
-  3. Change directory to the root repository directory
+  3. Change directory to the root repository directory.
       ```
      cd terraform-aws-sns
       ```
   
-  4. Run to following commands in order: 
+  4. Run to following commands in order. 
       ```
      cd setup_workspace
      terraform init
