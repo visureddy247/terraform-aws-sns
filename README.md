@@ -63,7 +63,7 @@ Refer below reference table for supported protocol and endpoint example.
 
 | Protocol         |               Endpoint description                         | Argument      | Endpoint example |
 | ---| :--- | --- | ---
-| Amazon Kinesis Data Firehose | Delivers JSON-encoded messages, endpoint is is the ARN of an Amazon Kinesis Data Firehose delivery stream | ```firehose```  |   ```arn:aws:firehose:us-east-1:123456789012:deliverystream/ticketUploadStream```  |
+| Amazon Kinesis Data Firehose | Delivers JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream. Endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream. | ```firehose```  |   ```arn:aws:firehose:us-east-1:123456789012:deliverystream/ticketUploadStream```  |
 | Amazon SQS  | Delivers JSON-encoded message to an Amazon SQS queue. Endpoint is the ARN of an Amazon SQS queue | ```sqs``` |```arn:aws:sqs:us-west-2:123456789012:terraform-queue-too```  |   
 | AWS Lambda  | Delivers JSON-encoded messages, endpoint is the ARN of an AWS Lambda function.| lambda |  ```arn:aws:lambda:us-east-1:123456789012:function:sample-lambda```  |
 | Email |  Delivers messages via SMTP, endpoint is an email address. | ```email``` | ```test@example.com```|
