@@ -24,8 +24,8 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
       ```
   2. Copy `dev.auto.tfvars` from the /deploy directory to the root directory.
   3. Rename the copy of `dev.auto.tfvars` in the root directory to `terraform.tfvars`.
-  4. Open `terraform.tfvars` and edit the default values for **display_name**, **kms_master_key_id**, **access_type**, **protocol**, and **endpoint**. See [Protocols and endpoints](#table) later in this document for supported protocols and endpoint examples.
-  5. Add the following variables to `terraform.tfvars`. In the following example, replace values for AWS_SECRET_ACCESS_KEY, AWS_ACCESS_KEY_ID, and  AWS_SESSION_TOKEN with your information.
+  4. Open `terraform.tfvars` and edit the default values for `display_name`, `kms_master_key_id`, `access_type`, `protocol`, and `endpoint`. See [Protocols and endpoints](#table) later in this document for supported protocols and endpoint examples.
+  5. Add the following variables to `terraform.tfvars`. In the following example, replace values for `AWS_SECRET_ACCESS_KEY`, `AWS_ACCESS_KEY_ID`, and  `AWS_SESSION_TOKEN` with your information.
        ```  
       AWS_SECRET_ACCESS_KEY = "*****************"
       AWS_ACCESS_KEY_ID = "*****************"
@@ -42,11 +42,13 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
      ```
   6. Initialize Terraform and create Terraform resources. 
      * Performing operations remotely on the Terraform Cloud
-      ```
-     cd setup_workspace
-     terraform init
-     terraform apply -var-file="$HOME/.aws/terraform.tfvars"
-      ```
+     
+       a. Run `cd setup_workspace`.
+       
+       b. Run `terraform init`.
+       
+       c. Run `terraform apply -var-file="$HOME/.aws/terraform.tfvars"`.
+
      * Performing operations locally
     
        a. Run `terraform init`.
