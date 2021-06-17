@@ -33,19 +33,26 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
       workspace_dir = ../deploy
       region        = us-east-1 //AWS region
       ```    
-      Note: [AWS Security Token Service (AWS STS)](https://docs.aws.amazon.com/general/latest/gr/sts.html) credentials are optional but highly recommended. Ensure that your credential are secured outside version control and follow secrets management best practices. For more information, see [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html).
+      **Note:** [AWS Security Token Service (AWS STS)](https://docs.aws.amazon.com/general/latest/gr/sts.html) credentials are optional but highly recommended. Ensure that your credential are secured outside version control and follow secrets management best practices. For more information, see [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html).
   
   5. Save `terraform.tfvars`.
   4. Change to the /deploy directory.
      ```
      cd ../deploy
      ```
-  6. Initialize Terraform and create Terraform resources. Terraform apply is run remotely in Terraform Cloud.
+  6. Initialize Terraform and create Terraform resources.
       ```
      cd setup_workspace
      terraform init
      terraform apply -var-file="$HOME/.aws/terraform.tfvars"
       ```
+  6. Terraform apply is run remotely in Terraform Cloud. To perform operations locally , do the following: 
+   
+       a. Change directory to respective deploy dir and Initialize the `deploy` directory.
+       b. Run `terraform init`.  
+       c. Update your config values in *.tfvars file 
+       d. Run `terraform apply` or `terraform apply  -var-file="$HOME/.aws/terraform.tfvars"`.
+
      Refer below reference table for supported protocol and endpoint example. 
 
         | Protocol         |               Endpoint Description                         | Argument      | Endpoint Example |
@@ -60,20 +67,5 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
         | Platform application endpoint | Delivers JSON-encoded messages, endpoint is the endpoint ARN of a mobile app and device. | ```application``` | ```arn:aws:sns:us-west-2:123456789012:endpoint/ADM/MyApplication/abcd1efg2hi4jk6lmnopqr```|
         | SMS | Delivers text messages via SMS, endpoint is the phone number of an SMS-enabled device. | ```sms``` |  ```+91 1234567890```|
 
-      
-   
-      Note : 
-      ```
-     - update the below  config values in *.tfvars file
-          display_name, kms_master_key_id, access_type, protocol, endpoint, 
-          An example can be found in the dev.auto.tfvars file.
-
-      ```
-     
-  6. To perform operations locally , do the following: 
-   
-       a. Change directory to respective deploy dir and Initialize the `deploy` directory.
-       b. Run `terraform init`.  
-       c. Update your config values in *.tfvars file 
-       d. Run `terraform apply` or `terraform apply  -var-file="$HOME/.aws/terraform.tfvars"`.
-
+             
+  
