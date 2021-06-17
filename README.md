@@ -22,14 +22,10 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
       ```
       git clone https://github.com/aws-quickstart/terraform-aws-sns
       ```
-
-  2. Change directory to the root repository directory.
-      ```
-     cd terraform-aws-sns
-      ```
-  3. Copy `dev.auto.tfvars` from the /deploy directory to the root directory.
-  4. Rename the copy of `dev.auto.tfvars` in the root directory to `terraform.tvars`.
-  5. Open `terraform.tfvars` and add the following variables. In the following example, replace values for AWS_SECRET_ACCESS_KEY, AWS_ACCESS_KEY_ID, and  AWS_SESSION_TOKEN with your information.
+  2. Copy `dev.auto.tfvars` from the /deploy directory to the root directory.
+  3. Rename the copy of `dev.auto.tfvars` in the root directory to `terraform.tfvars`.
+  4. Open `terraform.tfvars` and edit the default values for display_name, kms_master_key_id, access_type, protocol, and endpoint. See "Protocols and endpoints" for supported protocols and endpoint examples.
+  5. Add the following variables to `terraform.tfvars`. In the following example, replace values for AWS_SECRET_ACCESS_KEY, AWS_ACCESS_KEY_ID, and  AWS_SESSION_TOKEN with your information.
        ```  
       AWS_SECRET_ACCESS_KEY = "*****************"
       AWS_ACCESS_KEY_ID = "*****************"
@@ -39,21 +35,18 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
       ```    
       Note: [AWS Security Token Service (AWS STS)](https://docs.aws.amazon.com/general/latest/gr/sts.html) credentials are optional but highly recommended. Ensure that your credential are secured outside version control and follow secrets management best practices. For more information, see [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html).
   
-  4. Initialize Terraform and create Terraform resources. 
+  5. Save `terraform.tfvars`.
+  4. Change to the /deploy directory.
+     ```
+     cd ../deploy
+     ```
+  6. Initialize Terraform and create Terraform resources. Terraform apply is run remotely in Terraform Cloud.
       ```
      cd setup_workspace
      terraform init
      terraform apply -var-file="$HOME/.aws/terraform.tfvars"
       ```
-  5. Change directory to respective deploy dir (previous command auto generates backend.hcl) 
-      ```
-        cd ../deploy  //For deploying SNS Topic in a new virtual private cloud (VPC)
-        
-      ```
-    
-  7. Update  your ```*.tfvars``` file like sample (```dev.auto.tfvars```) given in /deploy directory.
-
-     Refer below reference table for supported protocol and endpoint example. 
+  ## Protocols and endpoints 
 
         | Protocol         |               Endpoint Description                         | Argument      | Endpoint Example |
         | ---| :--- | --- | ---
@@ -67,12 +60,7 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
         | Platform application endpoint | Delivers JSON-encoded messages, endpoint is the endpoint ARN of a mobile app and device. | ```application``` | ```arn:aws:sns:us-west-2:123456789012:endpoint/ADM/MyApplication/abcd1efg2hi4jk6lmnopqr```|
         | SMS | Delivers text messages via SMS, endpoint is the phone number of an SMS-enabled device. | ```sms``` |  ```+91 1234567890```|
 
-      ```
-       terraform init
-       terraform apply or terraform apply -var-file="$HOME/.aws/terraform.tfvars"
-
-      ```
-       Terraform apply is run remotely in Terraform Cloud
+      
    
       Note : 
       ```
