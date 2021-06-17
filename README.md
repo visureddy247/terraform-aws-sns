@@ -1,13 +1,13 @@
-# terraform-aws-sns
-**Author** : Rahul Gaikwad (gikwadr@amazon.com), Jomcy Pappachen(jomcy@amazon.com)
+# Terraform Amazon SNS Module
+**Authors** : Rahul Gaikwad (gikwadr@amazon.com), Jomcy Pappachen (jomcy@amazon.com)
 
-This Terraform module will create an Amazon Simple Notification Service(SNS) Topic with other resources 
+This Terraform module will create an Amazon Simple Notification Service (SNS) Topic with other resources. 
 
-## Folder structure : 
-* **deploy/** folder contains the sample  .tf files with `*.tfvars` to deploy Amazon SNS Topic
+## Repository directory structure 
+* **deploy/** contains sample .tf files, with `*.tfvars` to deploy the Amazon SNS topic.
 
 
-## Prerequisites : 
+## Prerequisites 
 1. Install Terraform. For instructions and a video tutorial, see [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli). 
 2. Sign up and log into Terraform Cloud. (There is a free tier available.)
 3. Configure Terraform Cloud API access. Run the following to generate a Terraform Cloud token from the command line interface:
@@ -17,7 +17,7 @@ This Terraform module will create an Amazon Simple Notification Service(SNS) Top
    ```
 4. If you don't have git installed, [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 
 
-## Deployment of terraform-aws-module (instruction for linux or mac)
+## Deploying the terraform-aws-module
    
    1. Configure your tfvars file. 
        ```  
