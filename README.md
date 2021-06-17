@@ -24,7 +24,7 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
       ```
   2. Copy `dev.auto.tfvars` from the /deploy directory to the root directory.
   3. Rename the copy of `dev.auto.tfvars` in the root directory to `terraform.tfvars`.
-  4. Open `terraform.tfvars` and edit the default values for display_name, kms_master_key_id, access_type, protocol, and endpoint. See "Protocols and endpoints" for supported protocols and endpoint examples.
+  4. Open `terraform.tfvars` and edit the default values for **display_name**, **kms_master_key_id**, **access_type**, **protocol**, and **endpoint**. See "Protocols and endpoints" for supported protocols and endpoint examples.
   5. Add the following variables to `terraform.tfvars`. In the following example, replace values for AWS_SECRET_ACCESS_KEY, AWS_ACCESS_KEY_ID, and  AWS_SESSION_TOKEN with your information.
        ```  
       AWS_SECRET_ACCESS_KEY = "*****************"
