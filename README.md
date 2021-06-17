@@ -9,7 +9,7 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
 ## Prerequisites 
 1. Install Terraform. For instructions and a video tutorial, see [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli). 
 2. Sign up and log into Terraform Cloud. (There is a free tier available.)
-3. Configure Terraform Cloud API access. Run the following to generate a Terraform Cloud token from the command line interface:
+3. Generate a Terraform Cloud token to configure Terraform Cloud API access.
    ```
       terraform login
       export TERRAFORM_CONFIG="$HOME/.terraform.d/credentials.tfrc.json"
