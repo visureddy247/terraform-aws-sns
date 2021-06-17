@@ -47,6 +47,7 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
      terraform apply -var-file="$HOME/.aws/terraform.tfvars"
       ```
   ## Protocols and endpoints 
+Refer below reference table for supported protocol and endpoint example. 
 
         | Protocol         |               Endpoint Description                         | Argument      | Endpoint Example |
         | ---| :--- | --- | ---
