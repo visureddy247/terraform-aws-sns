@@ -40,23 +40,19 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
      ```
      cd ../deploy
      ```
-  6. Initialize Terraform and create Terraform resources.
+  6. Initialize Terraform and create Terraform resources. 
+     * To perform this operation remotely on the Terraform Cloud
       ```
      cd setup_workspace
      terraform init
      terraform apply -var-file="$HOME/.aws/terraform.tfvars"
       ```
-  6. Terraform apply is run remotely in Terraform Cloud. To perform operations locally , do the following: 
-   
-       a. Change directory to respective deploy dir and Initialize the `deploy` directory.
-       
-       b. Run `terraform init`.  
-       
-       c. Update your config values in `terraform.tfvars`.
-       
-       d. Run `terraform apply` or `terraform apply  -var-file="$HOME/.aws/terraform.tfvars"`.
-
-
+     * To perform operations locally
+     a. Run `terraform init`.
+     b. Update your config values in `terraform.tfvars`.
+     c. Run `terraform apply` or `terraform apply  -var-file="$HOME/.aws/terraform.tfvars"`.
+     
+ 
 ## Protocols and endpoints <a name='table'>
 
 Refer below reference table for supported protocol and endpoint example.
