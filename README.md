@@ -63,15 +63,15 @@ Refer below reference table for supported protocol and endpoint example.
 
 | Protocol         |               Endpoint description                         | Argument      | Endpoint example |
 | ---| :--- | --- | ---
-| Amazon Kinesis Data Firehose | Delivers JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream. Endpoint is the ARN of a Kinesis Data Firehose delivery stream. | ```firehose```  |   ```arn:aws:firehose:us-east-1:123456789012:deliverystream/ticketUploadStream```  |
-| Amazon SQS  | Delivers JSON-encoded message to an Amazon SQS queue. Endpoint is the ARN of an SQS queue. | ```sqs``` |```arn:aws:sqs:us-west-2:123456789012:terraform-queue-too```  |   
-| AWS Lambda  | Delivers JSON-encoded message to an AWS Lambda function. Endpoint is the ARN of an AWS Lambda function.| lambda |  ```arn:aws:lambda:us-east-1:123456789012:function:sample-lambda```  |
-| Email |  Delivers messages via SMTP, endpoint is an email address. | ```email``` | ```test@example.com```|
-| Email-JSON | Delivers JSON-encoded messages via SMTP, endpoint is an email address.  |```email-json``` |   ```test@example.com```  |
-| HTTP  | Delivers JSON-encoded messages via HTTP POST, endpoint is a URL beginning with http:// | ```http``` | ``` http://www.example.com```  |
-| HTTPS | Delivers JSON-encoded messages via HTTPS POST, endpoint is a URL beginning with https:// | ```https``` |  ```https://www.example.com ```|
-| Platform application endpoint | Delivers JSON-encoded messages, endpoint is the endpoint ARN of a mobile app and device. | ```application``` | ```arn:aws:sns:us-west-2:123456789012:endpoint/ADM/MyApplication/abcd1efg2hi4jk6lmnopqr```|
-| SMS | Delivers text messages via SMS, endpoint is the phone number of an SMS-enabled device. | ```sms``` |  ```+91 1234567890```|
+| Amazon Kinesis Data Firehose | Delivers JSON-encoded messages to an Amazon Kinesis Data Firehose delivery stream. Endpoint is the ARN of a Kinesis Data Firehose delivery stream. | ```firehose```  |   ```arn:aws:firehose:us-east-1:123456789012:deliverystream/ticketUploadStream```  |
+| Amazon SQS  | Delivers JSON-encoded messages to an Amazon SQS queue. Endpoint is the ARN of an SQS queue. | ```sqs``` |```arn:aws:sqs:us-west-2:123456789012:terraform-queue-too```  |   
+| AWS Lambda  | Delivers JSON-encoded messages to an AWS Lambda function. Endpoint is the ARN of an AWS Lambda function.| lambda |  ```arn:aws:lambda:us-east-1:123456789012:function:sample-lambda```  |
+| Email |  Delivers messages via SMTP. Endpoint is an email address. | ```email``` | ```test@example.com```|
+| Email-JSON | Delivers JSON-encoded messages via SMTP. Endpoint is an email address.  |```email-json``` |   ```test@example.com```  |
+| HTTP  | Delivers JSON-encoded messages via HTTP POST. Endpoint is a URL beginning with `http://`. | ```http``` | ``` http://www.example.com```  |
+| HTTPS | Delivers JSON-encoded messages via HTTPS POST. Endpoint is a URL beginning with `https://`. | ```https``` |  ```https://www.example.com ```|
+| Platform application endpoint | Delivers JSON-encoded messages to an EndpointArn for a mobile app and device. Endpoint is the EndpointArn of a mobile app and device. | ```application``` | ```arn:aws:sns:us-west-2:123456789012:endpoint/ADM/MyApplication/abcd1efg2hi4jk6lmnopqr```|
+| SMS | Delivers text messages via SMS. Endpoint is the phone number of an SMS-enabled device. | ```sms``` |  ```+91 1234567890```|
 
              
   
