@@ -4,8 +4,7 @@
 This Terraform module will create an Amazon Simple Notification Service (SNS) Topic with other resources. 
 
 ## Repository directory structure 
-* **deploy/** contains sample .tf files, with `*.tfvars` to deploy the Amazon SNS topic.
-
+* **deploy/** contains .tf configuration files and `dev.auto.tfvars` to define default variables.
 
 ## Prerequisites 
 1. Install Terraform. For instructions and a video tutorial, see [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli). 
