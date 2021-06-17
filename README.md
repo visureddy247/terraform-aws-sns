@@ -18,17 +18,28 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
 
 ## Deploying the module
    
-  2. Clone the **aws-quickstart/terraform-aws-sns** repository.
+  1. Clone the **aws-quickstart/terraform-aws-sns** repository.
       ```
       git clone https://github.com/aws-quickstart/terraform-aws-sns
       ```
 
-  3. Change directory to the root repository directory.
+  2. Change directory to the root repository directory.
       ```
      cd terraform-aws-sns
       ```
+  3. Copy `dev.auto.tfvars` from the /deploy directory to the root directory.
+  4. Rename the copy of `dev.auto.tfvars` in the root directory to `terraform.tvars`.
+  5. Open `terraform.tfvars` and add the following variables. In the following example, replace values for AWS_SECRET_ACCESS_KEY, AWS_ACCESS_KEY_ID, and  AWS_SESSION_TOKEN with your information.
+       ```  
+      AWS_SECRET_ACCESS_KEY = "*****************"
+      AWS_ACCESS_KEY_ID = "*****************"
+      AWS_SESSION_TOKEN = "*****************"
+      workspace_dir = ../deploy
+      region        = us-east-1 //AWS region
+      ```    
+      Note: [AWS Security Token Service (AWS STS)](https://docs.aws.amazon.com/general/latest/gr/sts.html) credentials are optional but highly recommended. Ensure that your credential are secured outside version control and follow secrets management best practices. For more information, see [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html).
   
-  4. Run to following commands in order. 
+  4. Initialize Terraform and create Terraform resources. 
       ```
      cd setup_workspace
      terraform init
@@ -39,16 +50,7 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
         cd ../deploy  //For deploying SNS Topic in a new virtual private cloud (VPC)
         
       ```
-  6. Create a variables definition (.tvars) file with the following variables. In the following example, replace values for AWS_SECRET_ACCESS_KEY, AWS_ACCESS_KEY_ID, and  AWS_SESSION_TOKEN with your information.
-       ```  
-      AWS_SECRET_ACCESS_KEY = "*****************"
-      AWS_ACCESS_KEY_ID = "*****************"
-      AWS_SESSION_TOKEN = "*****************"
-      workspace_dir = ../deploy
-      region        = us-east-1 //AWS region
-      ```    
-      Note: [AWS Security Token Service (AWS STS)](https://docs.aws.amazon.com/general/latest/gr/sts.html) credentials are optional but highly recommended. Ensure that your credential are secured outside version control and follow secrets management best practices. For more information, see [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html).
-  
+    
   7. Update  your ```*.tfvars``` file like sample (```dev.auto.tfvars```) given in /deploy directory.
 
      Refer below reference table for supported protocol and endpoint example. 
