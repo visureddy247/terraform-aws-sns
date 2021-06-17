@@ -18,7 +18,7 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
 
 ## Deploying the terraform-aws-module
    
-   1. Configure your tfvars file. 
+   1. Configure your .tfvars file. 
        ```  
       Example filepath = $HOME/.aws/terraform.tfvars
       Example tfvars file contents
