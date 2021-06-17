@@ -60,7 +60,7 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
  
 ## Protocols and endpoints <a name='table'>
 
-Refer below reference table for supported protocol and endpoint example.
+The following table shows the endpoint format for each supported protocol. 
 
 | Protocol         |               Endpoint description                         | Argument      | Endpoint example |
 | ---| :--- | --- | ---
