@@ -49,23 +49,27 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
   6. Terraform apply is run remotely in Terraform Cloud. To perform operations locally , do the following: 
    
        a. Change directory to respective deploy dir and Initialize the `deploy` directory.
+       
        b. Run `terraform init`.  
-       c. Update your config values in *.tfvars file 
+       
+       c. Update your config values in `terraform.tfvars`.
+       
        d. Run `terraform apply` or `terraform apply  -var-file="$HOME/.aws/terraform.tfvars"`.
 
-     Refer below reference table for supported protocol and endpoint example. 
+## Protocol and endpoints
+Refer below reference table for supported protocol and endpoint example. 
 
-        | Protocol         |               Endpoint Description                         | Argument      | Endpoint Example |
-        | ---| :--- | --- | ---
-        | Amazon Kinesis Data Firehose | Delivers JSON-encoded messages, endpoint is is the ARN of an Amazon Kinesis Data Firehose delivery stream | ```firehose```  |   ```arn:aws:firehose:us-east-1:123456789012:deliverystream/ticketUploadStream```  |
-        | Amazon SQS  | Delivers JSON-encoded messages, endpoint is the ARN of an Amazon SQS queue | ```sqs``` |```arn:aws:sqs:us-west-2:123456789012:terraform-queue-too```  |   
-        | AWS Lambda  | Delivers JSON-encoded messages, endpoint is the ARN of an AWS Lambda function.| lambda |  ```arn:aws:lambda:us-east-1:123456789012:function:sample-lambda```  |
-        | Email |  Delivers messages via SMTP, endpoint is an email address. | ```email``` | ```test@example.com```|
-        | Email-JSON | Delivers JSON-encoded messages via SMTP, endpoint is an email address.  |```email-json``` |   ```test@example.com```  |
-        | HTTP  | Delivers JSON-encoded messages via HTTP POST, endpoint is a URL beginning with http:// | ```http``` | ``` http://www.example.com```  |
-        | HTTPS | Delivers JSON-encoded messages via HTTPS POST, endpoint is a URL beginning with https:// | ```https``` |  ```https://www.example.com ```|
-        | Platform application endpoint | Delivers JSON-encoded messages, endpoint is the endpoint ARN of a mobile app and device. | ```application``` | ```arn:aws:sns:us-west-2:123456789012:endpoint/ADM/MyApplication/abcd1efg2hi4jk6lmnopqr```|
-        | SMS | Delivers text messages via SMS, endpoint is the phone number of an SMS-enabled device. | ```sms``` |  ```+91 1234567890```|
+| Protocol         |               Endpoint description                         | Argument      | Endpoint example |
+| ---| :--- | --- | ---
+| Amazon Kinesis Data Firehose | Delivers JSON-encoded messages, endpoint is is the ARN of an Amazon Kinesis Data Firehose delivery stream | ```firehose```  |   ```arn:aws:firehose:us-east-1:123456789012:deliverystream/ticketUploadStream```  |
+| Amazon SQS  | Delivers JSON-encoded messages, endpoint is the ARN of an Amazon SQS queue | ```sqs``` |```arn:aws:sqs:us-west-2:123456789012:terraform-queue-too```  |   
+| AWS Lambda  | Delivers JSON-encoded messages, endpoint is the ARN of an AWS Lambda function.| lambda |  ```arn:aws:lambda:us-east-1:123456789012:function:sample-lambda```  |
+| Email |  Delivers messages via SMTP, endpoint is an email address. | ```email``` | ```test@example.com```|
+| Email-JSON | Delivers JSON-encoded messages via SMTP, endpoint is an email address.  |```email-json``` |   ```test@example.com```  |
+| HTTP  | Delivers JSON-encoded messages via HTTP POST, endpoint is a URL beginning with http:// | ```http``` | ``` http://www.example.com```  |
+| HTTPS | Delivers JSON-encoded messages via HTTPS POST, endpoint is a URL beginning with https:// | ```https``` |  ```https://www.example.com ```|
+| Platform application endpoint | Delivers JSON-encoded messages, endpoint is the endpoint ARN of a mobile app and device. | ```application``` | ```arn:aws:sns:us-west-2:123456789012:endpoint/ADM/MyApplication/abcd1efg2hi4jk6lmnopqr```|
+| SMS | Delivers text messages via SMS, endpoint is the phone number of an SMS-enabled device. | ```sms``` |  ```+91 1234567890```|
 
              
   
