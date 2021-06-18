@@ -6,58 +6,71 @@ This Terraform module will create an Amazon Simple Notification Service (SNS) To
 ## Repository directory structure 
 * **deploy/** contains .tf configuration files and `dev.auto.tfvars` to define default variables.
 
-## Prerequisites 
-1. Install Terraform. For instructions and a video tutorial, see [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli). 
-2. Sign up and log into Terraform Cloud. (There is a free tier available.)
-3. Generate a Terraform Cloud token to configure Terraform Cloud API access.
-   ```
-      terraform login
-      export TERRAFORM_CONFIG="$HOME/.terraform.d/credentials.tfrc.json"
-   ```
-4. If you don't have git installed, [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 
+# Install Terraform
+To deploy this module, do the following:
+Install Terraform. (See [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) for a tutorial.) 
 
-## Deploying the module
-   
-  1. Clone the **aws-quickstart/terraform-aws-sns** repository.
-      ```
-      git clone https://github.com/aws-quickstart/terraform-aws-sns
-      ```
-  2. Copy `dev.auto.tfvars` from the /deploy directory to the root directory.
-  3. Rename the copy of `dev.auto.tfvars` in the root directory to `terraform.tfvars`.
-  4. Open `terraform.tfvars` and edit the default values for `display_name`, `kms_master_key_id`, `access_type`, `protocol`, and `endpoint`. See [Protocols and endpoints](#table) later in this document for supported protocols and endpoint examples.
-  5. Add the following variables to `terraform.tfvars`. In the following example, replace values for `AWS_SECRET_ACCESS_KEY`, `AWS_ACCESS_KEY_ID`, and  `AWS_SESSION_TOKEN` with your information.
-       ```  
-      AWS_SECRET_ACCESS_KEY = "*****************"
-      AWS_ACCESS_KEY_ID = "*****************"
-      AWS_SESSION_TOKEN = "*****************"
-      workspace_dir = ../deploy
-      region        = us-east-1 //AWS region
-      ```    
-      **Note:** [AWS Security Token Service (AWS STS)](https://docs.aws.amazon.com/general/latest/gr/sts.html) credentials are optional but highly recommended. Ensure that your credential are secured outside version control and follow secrets management best practices. For more information, see [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html).
-  
-  5. Save `terraform.tfvars`.
-  4. Change to the /deploy directory.
-     ```
-     cd ../deploy
-     ```
-  6. Initialize Terraform and create Terraform resources. 
-     * Performing operations remotely on the Terraform Cloud
-     
-       a. Run `cd setup_workspace`.
-       
-       b. Run `terraform init`.
-       
-       c. Run `terraform apply -var-file="$HOME/.aws/terraform.tfvars"`.
+# Sign up for Terraform Cloud
+Sign up and log into [Terraform Cloud](https://app.terraform.io/signup/account). (There is a free tier available.)
 
-     * Performing operations locally
-    
-       a. Run `terraform init`.
-     
-       b. Update your config values in `terraform.tfvars`.
-     
-       c. Run `terraform apply` or `terraform apply  -var-file="$HOME/.aws/terraform.tfvars"`.
-     
- 
+## Configure Terraform Cloud API Access
+
+Generate terraform cloud token
+
+`terraform login` 
+
+Export the TERRAFORM_CONFIG variable
+
+`export TERRAFORM_CONFIG="$HOME/.terraform.d/credentials.tfrc.json"`
+
+# Configure your tfvars file
+
+_Example filepath_ = `$HOME/.aws/terraform.tfvars`
+
+_Example tfvars file contents_ 
+
+```
+AWS_SECRET_ACCESS_KEY = "*****************"
+AWS_ACCESS_KEY_ID = "*****************"
+AWS_SESSION_TOKEN = "*****************"
+```
+> (replace *** with AKEY and SKEY)
+
+Note: STS-based credentials _are optional_ but *highly recommended*. 
+
+> !!!!CAUTION!!!!: Make sure your credential are secured ourside version control (and follow secrets mangement bestpractices)
+
+# Deploy this module (instruction for linux or mac)
+
+Clone the aws-ia/terraform-aws-sns repository.
+
+`git clone https://github.com/aws-ia/terraform-aws-vpc`
+
+Change directory to module root.
+
+`cd terraform-aws-sns`.
+
+Start by setting up you cloud workspace
+
+`cd setup_workspace`. 
+
+Run to following commands in order:
+
+`terraform init`
+
+`terraform apply`  or `terraform apply  -var-file="$HOME/.aws/terraform.tfvars"`.
+
+Change directory to deploy dir (previous command auto generates backend.hcl)
+
+`cd ../deploy`
+
+ Open `dev.auto.tfvars` and edit the default values to match your enviornment. 
+      - See [Protocols and endpoints](#table) later in this document for supported protocols and endpoint examples.
+
+`terraform apply` or `terraform apply  -var-file="$HOME/.aws/terraform.tfvars"`. 
+
+Terraform apply is run remotely in Terraform Cloud 
+
 ## Protocols and endpoints <a name='table'>
 
 The following table shows the endpoint format for each supported protocol. 
