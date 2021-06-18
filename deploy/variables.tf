@@ -3,14 +3,14 @@ variable "region" {
 }
 
 variable "namespace" {
-  description = "namespace, which could be your organiation name, e.g. amazon"
+  description = "namespace, which could be your organiation name, e.g. amazon."
   default     = "myorg"
 }
 
 variable "environment" {
   type        = string
   default     = "preprod"
-  description = "Environment area, e.g. prod or preprod "
+  description = "Environment area, e.g. prod or preprod."
 }
 
 variable "name" {
@@ -19,17 +19,17 @@ variable "name" {
 }
 
 variable "delimiter" {
-  description = "delimiter, which could be used between name, namespace and env"
+  description = "delimiter, which could be used between name, namespace and env."
   default     = "-"
 }
 
 variable "attributes" {
   default     = []
-  description = "atttributes, which could be used for additional attributes"
+  description = "atttributes, which could be used for additional attributes."
 }
 
 variable "account" {
-  description = "account, which could be AWS Account Name or Number"
+  description = "account, which could be AWS Account Name or Number."
   default     = "myaccount"
 }
 
@@ -39,9 +39,8 @@ variable "project_name" {
 }
 
 variable "tags" {
-  #type        = map(string)
   default     = {}
-  description = "tags, which could be used for additional tags"
+  description = "tags, which could be used for additional tags."
 }
 
 ### SNS Variabls ###
@@ -52,25 +51,25 @@ variable "display_name" {
 }
 
 variable "kms_master_key_id" {
-  description = "KMS Key to encrypt SNS topic"
+  description = "KMS Key to encrypt SNS topic."
   type        = string
   default     = "aws/sns"
 }
 
 variable "access_type" {
-  description = "Access type for SNS topic - publish / subscribe / owner"
+  description = "Access type for SNS topic - publish / subscribe / owner."
   type        = string
   default     = "owner"
 }
 
 variable "protocol" {
-  description = "Protocol type for SNS Subscription"
+  description = "Protocol type for SNS Subscription."
   type        = string
   default     = null
 }
 
 variable "endpoint" {
-  description = "Protocol endpoint for SNS Subscription"
+  description = "Protocol endpoint for SNS Subscription."
   type        = string
   default     = null
 }

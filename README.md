@@ -44,7 +44,7 @@ Note: STS-based credentials _are optional_ but *highly recommended*.
 
 Clone the aws-ia/terraform-aws-sns repository.
 
-`git clone https://github.com/aws-ia/terraform-aws-vpc`
+`git clone https://github.com/aws-ia/terraform-aws-sns`
 
 Change directory to module root.
 

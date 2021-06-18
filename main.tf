@@ -1,10 +1,6 @@
-
 data "aws_caller_identity" "current" {}
 
-####################################
 ## Create SNS Topic 
-####################################
-
 resource "aws_sns_topic" "sns_topic" {
   name              = var.topic_name
   display_name      = var.display_name
@@ -12,10 +8,7 @@ resource "aws_sns_topic" "sns_topic" {
   tags              = var.tags
 }
 
-####################################
 ## Create SNS Policy 
-####################################
-
 resource "aws_sns_topic_policy" "sns_topic_policy" {
   arn = aws_sns_topic.sns_topic.arn
   policy = templatefile("${path.module}/templates/sns_${var.access_type}_policy.tpl",
@@ -25,7 +18,7 @@ resource "aws_sns_topic_policy" "sns_topic_policy" {
   })
 }
 
-# SNS - SQS Subscription example 
+## SNS - SQS Subscription example
 resource "aws_sns_topic_subscription" "sns_sqs_subscription" {
   topic_arn = aws_sns_topic.sns_topic.arn
   protocol  = var.protocol

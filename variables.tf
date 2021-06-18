@@ -15,32 +15,30 @@ variable "display_name" {
 }
 
 variable "kms_master_key_id" {
-  description = "KMS Key to encrypt SNS topic"
+  description = "KMS Key to encrypt SNS topic."
   type        = string
   default     = "aws/sns"
 }
 
 variable "tags" {
-  #type        = map(string)
   default     = {}
   description = "tags, which could be used for additional tags"
 }
 
 variable "access_type" {
-  description = "Access type for SNS topic - publish / subscribe / owner"
+  description = "Access type for SNS topic - publish / subscribe / owner."
   type        = string
   default     = "owner"
 }
 
 variable "protocol" {
-  description = "Protocol type for SNS Subscription"
+  description = "Protocol type for SNS Subscription."
   type        = string
   default     = null
 }
 
 variable "endpoint" {
-  description = "Protocol endpoint for SNS Subscription"
+  description = "Protocol endpoint for SNS Subscription."
   type        = string
   default     = null
-
 }
