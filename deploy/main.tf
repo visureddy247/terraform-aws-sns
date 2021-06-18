@@ -1,7 +1,4 @@
-######################################
-# Defaults
-######################################
-
+## Defaults
 terraform {
   required_version = ">= 0.15.1"
   backend "remote" {}
@@ -11,9 +8,7 @@ provider "aws" {
   region = var.region
 }
 
-######################################
-# Create Labels
-######################################
+## Create Labels
 module "quickstart_sns_label" {
   source    = "aws-quickstart/label/aws"
   version   = "0.0.2"
@@ -29,9 +24,7 @@ module "quickstart_sns_label" {
   })
 }
 
-######################################
-# Create SNS
-######################################
+## Create SNS
 module "qs_sns" {
   source            = "../"
   topic_name        = module.quickstart_sns_label.id
